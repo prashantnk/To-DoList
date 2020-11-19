@@ -1,13 +1,20 @@
 <%- include("header"); -%>
-    <h1> <%= day %> </h1>
-    <ul>
-        <% items.forEach((val)=>{ %>
-            <input type="checkbox" name="" id="">
-            <div> <%= val  %> </div>
-       <% }) %>
-    </ul>
+<div class="container">
+    <h1 class="time"> time </h1>
+    <h2 class="date"> <%= day %> </h2>
+    <h2 class="heading">Today's Tasks</h2>
+    <div class="list">
+    <% items.forEach((val)=>{ %>
+    <div class="task"> 
+        <input type="checkbox" name="" id="" class="check"> 
+        <%= val  %> 
+    </div>
+    <% }) %>
+</div>
     <form action="/" method="POST">
-        <input type="text" name="task" autocomplete="off" required>
-        <button type="submit" name="button" value=<%= day %> >+</button>
+        <input type="text" name="task" autocomplete="off" required class="add">
+        <button class="btnadd" type="submit" name="button" value=<%= day %> >+</button>
     </form>
- <%- include("footer"); -%>
+</div>
+<script src="/time.js"></script>
+<%- include("footer"); -%>
